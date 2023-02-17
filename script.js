@@ -1,11 +1,11 @@
-let buttonColors = ["red", "blue", "green", "yellow"];
+// selecting colors and pattern
 
+let buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = []
 let level = 1
 let started = false
 
-// selecting colors and pattern
 
 // keypress event to start the game
 document.addEventListener("keypress", function () {
@@ -18,8 +18,7 @@ document.addEventListener("keypress", function () {
 
 
 
-// adding click event in the buttons 
-
+// adding click event in the buttons when the user click
 
 let redColor = document.querySelector("#red")
 let blueColor = document.querySelector("#blue")
@@ -27,6 +26,7 @@ let yellowColor = document.querySelector("#yellow")
 let greenColor = document.querySelector("#green")
 
 document.addEventListener("click", function (event) {
+//if statements to take the user click and save the pattern. 
 
     if (redColor.contains(event.target)) {
         let userChosenColour = "red"
@@ -110,7 +110,7 @@ function checkAnswer(currentLevel) {
     }
 }
 
-
+//This function controls all the game. it randomly introduce a new collor in the pattern
 function NextSequence() {
     userClickedPattern = []
     level++
@@ -139,6 +139,7 @@ function NextSequence() {
     return (buttonAnimation(), btnSound())
 }
 
+// this function just restart the game 
 function startOver() {
     level = 0;
     gamePattern = []
